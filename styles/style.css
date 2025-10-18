@@ -1,0 +1,80 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw; height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    align-items: center;
+    background-color: rgb(174, 174, 174);
+}
+
+input {
+    width: 100%; height: 5vh;
+    padding: 0% 1%;
+    background-color: transparent;
+    border: 1px solid gray;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.478);
+}
+
+.add_Btn {
+    width: 10vw;
+    aspect-ratio: square;
+    background-image: url("/public/images/add.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    border: none;
+}
+
+.delete_Btn {
+    width: 2vw; height: 2vw;
+    aspect-ratio: square;
+    border-radius: 5px;
+    background-image: url("/public/images/trash.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    border: none;
+}
+
+.container {
+    width: 80vw; height: 80vh;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0% 2% 2% 02%;
+    border-radius: 10px;
+    border: 2px solid white;
+    background-color: rgba(255, 255, 255, 0.682);
+}
+
+.card_Container {
+    width: 100%; height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    gap: 10px;
+    border-radius: 10px;
+    padding: 1% 1% 1% 1%;
+    background-color: rgba(249, 249, 249, 0.492);
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+    border: 2px solid rgb(228, 228, 228);
+    padding: 1% 1%;
+    background-color:  rgba(221, 221, 221, 0.492);
+}

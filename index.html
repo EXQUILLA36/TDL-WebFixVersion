@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://pdm.edu.ph/wp-content/uploads/2024/03/cropped-logo-2.png" type="image/x-icon">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>WebFix</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Student List</h1>
+        <div class="input_Container">
+            <form action="">
+                <input type="text" name="" id="studentID" placeholder="Student ID">
+                <input type="text" name="" id="studentName" placeholder="Student Name">
+                <input type="text" name="" id="studentSec" placeholder="Student Section">
+                <button class="add_Btn" id="addBtn"></button>
+            </form>
+        </div>
+        <div class="card_Container" id="cardContainer">
+            <div class="card" id="card">
+                <span>${student.name}</span>
+                <span>${student.id}</span>
+                <span>${student.section}</span>
+                <button class="delete_Btn"></button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./scripts/script.js"></script>
+</html>
