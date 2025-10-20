@@ -147,14 +147,14 @@ filterButtons.forEach(btn => {
 
 function filterStudents(filter) {
   let filteredList = [];
-  filteredList = students;
-
+  
   if (filter === "ALL") {
     filteredList = students;
   } else {
     filteredList = students.filter(student => student.section === filter);
   }
-
+  
+  filteredList = students;
   showFilteredStudents(filteredList);
 }
 
