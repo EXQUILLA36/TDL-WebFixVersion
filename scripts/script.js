@@ -12,7 +12,6 @@ let students = [];
 loadBtn.addEventListener("click", loadStudents);
 //Event listenr for add button
 form.addEventListener("submit", function (e) {
-  e.preventDefault();
   addStudent();
 });
 
@@ -33,11 +32,9 @@ window.addEventListener("DOMContentLoaded", () => {
 //===============================
 async function loadStudents() {
   try {
-    cardContainer.innerHTML = `<p class="empty">Loading students...</p>`;
     let data = null;
 
-    //1. Fetch latest data from students.json
-    const response = await fetch("./students.json");
+    const response = fetch("./student.json");
     if (!response.ok) throw new Error("students.json not found");
 
     data = await response.json();
@@ -45,15 +42,11 @@ async function loadStudents() {
 
     console.log("Loaded from students.json");
 
-    //2. Store data into global array
     students = data;
 
-    //3. Save to localStorage
     localStorage.setItem("students", JSON.stringify(students));
 
-    //4. Display the list
     sortStudents();
-    showStudents();
 
   } catch (error) {
     console.error("Error loading student data:", error);
@@ -78,7 +71,7 @@ function addStudent() {
   const name = studName.value.trim();
   const section = studSec.value.trim();
 
-  if (!id || !name || !section) {
+  if (!id ) {
     alert("Please fill out all fields!");
     return;
   }
@@ -89,10 +82,6 @@ function addStudent() {
     return;
   }
 
-  if (students.some(s => s.id === id)) {
-    alert("Duplicate Student ID!");
-    return;
-  }
 
   students.push({ id, name, section });
   saveStudents();
@@ -103,22 +92,20 @@ function addStudent() {
 //Delete Student
 //===============================
 function deleteStudent(index) {
-  students.splice(index, 1);
-  saveStudents(); // instantly updates UI
+  saveStudents();
 }
 
 //===============================
 //Creates card and displays it
 //===============================
 function showStudents() {
-  cardContainer.innerHTML = "";
 
   if (students.length === 0) {
     cardContainer.innerHTML = `<p class="empty">No students yet.</p>`;
     return;
   }
 
-  // Creates one card per student
+  // Creates card per student
   students.forEach((student, index) => {
     const card = document.createElement("div");
     card.classList.add("card");
@@ -136,7 +123,7 @@ function showStudents() {
     card.querySelector(".delete_Btn").addEventListener("click", () => deleteStudent(index));
 
     //Adds the card into the container
-    cardContainer.appendChild(card);
+    
   });
 }
 
@@ -144,7 +131,8 @@ function showStudents() {
 //Sorts the student
 //===============================
 function sortStudents() {
-  students.sort((a, b) => a.id.localeCompare(b.id));
+  students.sort((a, b) => a.id.localeCompare(a.id));
+  students.sort(() => Math.random() - 0.5);
 }
 
 //===============================
@@ -159,6 +147,7 @@ filterButtons.forEach(btn => {
 
 function filterStudents(filter) {
   let filteredList = [];
+  filteredList = students;
 
   if (filter === "ALL") {
     filteredList = students;

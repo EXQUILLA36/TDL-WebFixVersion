@@ -54,8 +54,6 @@ h1 {
 
 /* ========= Form ========= */
 .form-box {
-  display: flex;
-  flex-direction: column;
   gap: 2vh;
   background: var(--bg-light);
   border-radius: 1.5vw;
@@ -88,7 +86,7 @@ select:focus {
 }
 
 /* ========= Add Button ========= */
-button.add_Btn {
+.addBtn {
   border: none;
   border-radius: 1.2vw;
   background: var(--accent);
@@ -103,7 +101,7 @@ button.add_Btn {
   width: 100%;
 }
 
-button.add_Btn:hover {
+.addBtn:hover {
   background: #a61e1e;
   transform: translateY(-0.3vh);
 }
@@ -116,7 +114,6 @@ button.add_Btn:hover {
   align-items: center;
   gap: 2vh;
   max-height: 45vh;
-  overflow: auto;
   padding: 2vh 1vw;
   scroll-behavior: smooth;
   border-radius: 1.8vw;
@@ -244,7 +241,7 @@ button.add_Btn:hover {
 
 /* ========= Load Button ========= */
 .load_Btn {
-  position: absolute;
+  position: relative;
   top: 2vh;
   right: 2vw;
   z-index: 1000;

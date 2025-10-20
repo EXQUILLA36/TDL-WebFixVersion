@@ -9,16 +9,19 @@
 </head>
 
 <body>
+
+  <script src="./scripts/script.js"></script>
+  
   <button id="loadBtn" class="load_Btn">Load Students</button>
 
   <div class="container">
     <h1>Student List</h1>
+
     <form id="studentForm" class="form-box">
 
       <input
         type="text"
         id="studentID"
-        placeholder="Student ID (PDM-0000-000000)"
         pattern="^PDM-\d{4}-\d{6}$"
         title="Format: PDM-0000-000000"
         />
@@ -26,13 +29,10 @@
       <input 
         type="text" 
         id="studentName" 
-        placeholder="Student Name" 
         />
 
       <select id="studentSec">
         <option value="">Select Section</option>
-        <option value="BSCS">BSCS</option>
-        <option value="BSIT">BSIT</option>
       </select>
 
       <button type="submit" class="add_Btn" id="addBtn">Add Student</button>
@@ -40,15 +40,13 @@
     </form>
 
     <div class="filter-box">
-      <button class="filter_Btn" data-filter="ALL">Show All</button>
-      <button class="filter_Btn" data-filter="BSCS">BSCS Only</button>
-      <button class="filter_Btn" data-filter="BSIT">BSIT Only</button>
+      <button class="filterBtn" data-filter="BSCS">Show All</button>
+      <button class="filterBtn" data-filter="BSIT">BSCS Only</button>
+      <button class="filterBtn" data-filter="ALL">BSIT Only</button>
     </div>
 
-    <div id="cardContainer" class="card_Container"></div>
+    <div id="Container" class="card_Container"></div>
   </div>
-
-  <script src="./scripts/script.js"></script>
 </body>
 
 </html>
