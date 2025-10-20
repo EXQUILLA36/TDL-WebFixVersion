@@ -1,17 +1,8 @@
 [
-  {
-    "id": "2023-003214",
-    "name": "Triztan Verzosa",
-    "section": "BSCS-31A"
-  },
-  {
-    "id": "2023-003213",
-    "name": "Jhervin Mungcal",
-    "section": "BSCS-31A"
-  },
-  {
-    "id": "2023-003212",
-    "name": "Dominic Rivera",
-    "section": "BSCS-31A"
-  }
+  { "id": "PDM-2023-003211", "name": "Triz", "section": "BSCS" },
+  { "id": "PDM-2023-003212", "name": "Sean", "section": "BSIT" },
+  { "id": "PDM-2023-003213", "name": "Earl", "section": "BSCS" },
+  { "id": "PDM-2023-003214", "name": "Jhervin", "section": "BSCS" },
+  { "id": "PDM-2023-003215", "name": "Luigie", "section": "BSIT" },
+  { "id": "PDM-2023-003216", "name": "Dominic", "section": "BSCS" }
 ]
